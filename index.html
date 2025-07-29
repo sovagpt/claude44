@@ -82,40 +82,20 @@
         }
 
         .hero-title {
-            font-size: clamp(4rem, 8vw, 8rem);
-            font-weight: 900;
             margin-bottom: 20px;
-            color: #ff6b35;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-            line-height: 0.9;
-            text-shadow: 
-                0 0 10px rgba(255, 107, 53, 0.5),
-                0 0 20px rgba(255, 107, 53, 0.3),
-                0 0 30px rgba(255, 107, 53, 0.2);
-            font-family: 'Courier New', monospace;
-            position: relative;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
         }
 
-        .hero-title::after {
-            content: '_';
-            animation: blink 1s infinite;
+        .hero-title img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
         }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        .typewriter {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 3s steps(12, end);
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes glow {
@@ -137,18 +117,21 @@
         }
 
         .ascii-diagram {
-            margin: 30px 0;
+            margin: 50px auto;
             font-family: 'Courier New', monospace;
-            color: #ff6b35;
+            color: #d4803f;
             font-size: 0.9rem;
-            line-height: 1.2;
+            line-height: 1.3;
             opacity: 0;
-            animation: fadeInUp 2s ease 3.5s forwards;
+            animation: fadeInUp 2s ease 1s forwards;
+            text-align: center;
+            max-width: 600px;
         }
 
         .ascii-diagram pre {
             margin: 0;
             text-align: left;
+            display: inline-block;
         }
 
         @keyframes fadeInUp {
@@ -375,26 +358,10 @@
             <div class="particle"></div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title typewriter">ORCHESTRATOR</h1>
-            <p class="hero-subtitle">Multi-agent coordination system for complex development workflows</p>
-            <div class="ascii-diagram">
-                <pre>
-┌─────────────┐
-│ Orchestrator│ ← You interact here
-└──────┬──────┘
-       │ Monitors & coordinates
-       ▼
-┌─────────────┐     ┌─────────────┐
-│  Project    │     │  Project    │
-│  Manager 1  │     │  Manager 2  │ ← Assign tasks, enforce specs
-└──────┬──────┘     └──────┬──────┘
-       │                   │
-       ▼                   ▼
-┌─────────────┐     ┌─────────────┐
-│ Engineer 1  │     │ Engineer 2  │ ← Write code, fix bugs 
-└─────────────┘     └─────────────┘
-                </pre>
+            <div class="hero-title">
+                <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6888375117e7750e63ec296f_XF4sbqza__1_-removebg-preview.png" alt="Orchestrator" />
             </div>
+            <p class="hero-subtitle">Multi-agent coordination system for complex development workflows</p>
         </div>
     </section>
 
@@ -447,6 +414,25 @@
                     <br>
                     <div class="comment">// ✅ All critical paths fixed</div>
                 </div>
+            </div>
+            
+            <div class="ascii-diagram">
+                <pre>
+┌─────────────┐
+│ Orchestrator│ ← You interact here
+└──────┬──────┘
+       │ Monitors & coordinates
+       ▼
+┌─────────────┐     ┌─────────────┐
+│  Project    │     │  Project    │
+│  Manager 1  │     │  Manager 2  │ ← Assign tasks, enforce specs
+└──────┬──────┘     └──────┬──────┘
+       │                   │
+       ▼                   ▼
+┌─────────────┐     ┌─────────────┐
+│ Engineer 1  │     │ Engineer 2  │ ← Write code, fix bugs 
+└─────────────┘     └─────────────┘
+                </pre>
             </div>
         </div>
     </section>
